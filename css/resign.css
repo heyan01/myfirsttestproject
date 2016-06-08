@@ -1,0 +1,68 @@
+html,body,div,h1,h2,h3,h4,h5,h5,h6,a,ul,li,p,span,img,b,i{padding: 0;margin: 0;list-style: none;text-decoration: none;font-family: "Microsoft Yahei";font-size: 14px;line-height: 22px;color: #333}
+.inner1024{width: 1024px;margin: 0 auto;position: relative}
+.clear{clear:both;height: 0;line-height: 0}
+
+.header{width: 100%;height: 323px;background: #00b38a;}
+.logo{position: absolute;top: 70px;left: 136px;background: url("../images/resign/logo_13bcdf6.png")no-repeat center;height: 54px;width: 128px;/*z-index: 2;display: inline-block*/}
+.resignBox{margin: -168px auto 0 auto;width: 556px;padding: 50px 47px 60px 57px;background: #fff;border-radius: 3px;box-shadow: 0 0 5px rgba(0,0,0,.09);position: relative;}
+.left{width: 300px;margin-right: 46px;float: left;}
+
+form .lis{position: relative;height: 33px;margin-bottom: 29px;border-bottom: 1px solid #ebebeb;}
+form .lis li{position: relative;float: left;font-size: 16px;cursor: pointer;color: #333;text-align: center;width: 150px;height: 33px;vertical-align: middle}
+form .lis li.active{color: #00b38a}
+.lis .phone i,.lis .mail i{display: inline-block;width: 16px;height: 20px;vertical-align: middle;}
+.lis .phone i{background: url("../images/resign/icon-phone_4327f93.png")no-repeat 0 top}
+.lis .phone.active i{background: url("../images/resign/icon-phone-active_74d4e76.png")no-repeat}
+.lis .mail i{background: url("../images/resign/icon-mail_dd7169e.png")no-repeat 0 top;width: 20px;margin-top: 4px}
+.lis .mail.active i{background: url("../images/resign/icon-mail-active_22ff66f.png")no-repeat}
+.lis span{position: absolute;bottom: -1px;height: 1px;background: #00b38a;width: 150px;left: 0}
+.lis span i{position: absolute;left: 50%;top: -12px;width: 0;height: 0;border: 6px solid transparent;border-bottom-color: #00b38a;margin-left: -3px}
+.lis span b{position: absolute;left: 50%;top: -10px;width: 0;height: 0;border: 6px solid transparent;border-bottom-color: #fff;margin-left: -3px}
+
+.form_body{float: left;display: block;}
+.form_body  input,.form_bodyDisNone input{width: 272px;background-color: #f8f8f8;font-size: 14px;position: relative;height: 44px;padding:0 13px;vertical-align: middle;color: #333;border: 1px solid #f8f8f8;border-radius: 2px;font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif}
+.unrobot{margin-top: 20px}
+.unrobot input{width: 130px;display: block;border-top-right-radius: 0;border-bottom-right-radius: 0;float: left}
+.unrobot img{width: 100px;height: 46px;vertical-align: middle;background: gainsboro;display: inline}
+.unrobot a{background: url("../images/resign/icon-reflash_a187c0b.jpg") no-repeat center;display: inline-block;height: 48px;width: 19px;vertical-align: middle;margin-left: 10px }
+
+.test{margin-top: 20px}
+.test .messageTest{width: 162px;float: left;border-top-right-radius: 0;border-bottom-right-radius: 0;}
+.test .getMessage{width: 110px;padding: 0;font-size: 14px;color: #fff;background-color: #00b38a;border-color:#00b38a;height: 46px; border-top-left-radius: 0;border-bottom-left-radius: 0;}
+.passWord{margin-top: 20px}
+.find{margin-top: 20px}
+.find input{display: inline-block; width: 140px;margin-top: 0;margin-right: 15px;color: #999;border-color: #dce4e6;background-color: transparent;cursor: pointer;height: 46px;line-height: 46px}
+.find .findPeople{margin-right: 0;}
+
+.appoint{margin-bottom:10px;height: 14px;line-height: 14px;color: #777;cursor: pointer;position: relative;margin-top: 16px; vertical-align: middle}
+.appoint span{background: url("../images/resign/checkbox_e13d654.png")no-repeat ;position: absolute;top: 0;left: 0;width: 13px;height: 16px;background-position: -13px 3px}
+.appoint input{height: 13px;width: 13px;opacity: 0;}
+.appoint a{color: #00b38a}
+.appoint a:hover{text-decoration: underline}
+
+
+.resignBtn{margin-top: 20px;width: 100%}
+.resignBtn input{background: #00b38a;color: #fff;font-size: 18px;line-height: 46px;height: 46px;width: 100%;}
+
+.middle{float: left}
+
+.right{float: left;width: 151px;margin-left: 46px;color: #777;}
+.right h5{color: #777;font-size: 14px;margin:30px 0 10px;font-weight: 400}
+.right .login{display: inline-block;height: 22px;font-size: 16px;color: #00b38a;padding-right: 23px;background:url("../images/resign/icon-arrow-right_f36c0d6.png")no-repeat right center;}
+
+.right ul li{margin-top: 10px;margin-right: 9px;float: left;height: 43px;width: 44px;}
+.right ul li.last{margin-right: 0}
+.right ul li a{display: inline-block;width: 44px;height: 43px;background-repeat: no-repeat;background-position: left top;}
+.right .weibo{background: url("../images/resign/icon-sina_9cae1d9.png")}
+.right .QQ{background: url("../images/resign/icon-tecent_5870bd4.png")}
+.right .weixin{background: url("../images/resign/icon-wechat_12ea62f.png")}
+
+.code{margin-top: 80px}
+.code img{width: 124px;height: 124px;border: 0}
+.code p{font-size: 12px;padding-left:7px;color: #777}
+
+.resignBox:before{content: "";position: absolute;display: block;width: 0;right: -2px;bottom: -2px;border-width: 8px;border-color: #f1f1f1 #fff #fff #f1f1f1;border-style: solid;border-radius: 3px 0 0;z-index: 2 }
+
+.resignBox:after{content: "";position: absolute;display: block;width: 0;bottom: -1px;right: 5px;border-width: 12px 12px 0 0;border-color: #dedede;border-style: solid;z-index: 1;border-radius: 3px 0 0}
+
+.footer h4{margin: 50px 0 10px;text-align: center;color: #d1d1d1;font-size: 16px;font-weight: 400}

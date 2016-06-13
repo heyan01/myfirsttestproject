@@ -16,15 +16,14 @@
     <section class="swiper-container">
         <div class="swiper-wrapper">
 
-
-            <div class="swiper-slide pageOne" id="pageOne">
+            <div class="swiper-slide pageOne" trueId="pageOne">
                 <img src="./img/pageone_1.png" alt=""/>
                 <img src="./img/pageone_2.png" alt=""/>
                 <img src="./img/pageone_4.png" alt=""/>
                 <div class="bg"></div>
                 <span class="tittle">个人简介</span>
             </div>
-            <div class="swiper-slide pageTwo" id="pageTwo">
+            <div class="swiper-slide pageTwo" trueId="pageTwo">
                 <img src="./img/pageone_1.png" alt=""/>
                 <span class="name">姓名：贺燕</span>
                 <span class="add">坐标：北京</span>
@@ -33,7 +32,7 @@
                 <span class="dur">工作经验：1年</span>
                 <p class="tittle">Who Am I?</p>
             </div>
-            <div class="swiper-slide pageThr" id="pageThr">
+            <div class="swiper-slide pageThr" trueId="pageThr">
 
                 <ul class="top">
                     <li>原生JS</li>
@@ -59,9 +58,17 @@
 
             </div>
                 <!--page3 end-->
-            <div class="swiper-slide pageFour" id="pageFour">
-
-
+            <div class="swiper-slide pageFour" trueId="pageFour">
+                <div class="stage"><!--舞台-->
+                    <div class="container"><!--物品-->
+                        <div class="slide front"><img src="./img/ecode.png" style="height: 100%;width: 100%" alt=""/></div>
+                        <!--<div class="slide top">2</div>-->
+                        <div class="slide left"><img src="./img/1.jpg" style="height: 100%;width: 100%" alt=""/></div>
+                        <div class="slide right">最好的时光就是现在！活在当下。</div>
+                       <!-- <div class="slide bottom">5</div>-->
+                        <div class="slide back">前端开发工程师</div>
+                    </div>
+                </div>
             </div>
         <!--page 4end-->
         </div>
@@ -78,7 +85,8 @@
 </body>
 </html>
 <script charset="utf-8" type="text/javascript" src="./js/swiper.min.js"></script>
-<script charset="UTF-8" type="text/javascript" src="./js/zepto.min.js"></script>
-<!--<script charset="UTF-8" type="text/javascript" src="./js/iscroll.js"></script>-->
+<script src="./js/fastClick.js">
+    FastClick.attach(document.body);
+</script>
 <script charset="UTF-8" type="text/javascript" src="./js/index.js"></script>
 

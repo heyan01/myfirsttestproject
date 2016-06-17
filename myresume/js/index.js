@@ -22,7 +22,7 @@
         modifier: 2,
         slideShadows : true
     },   */
-    onSlidePrevEnd: function () {//往上翻一张结束
+    onSlidePrevStart: function () {//往上翻一张结束
         step--;
         console.log("往上翻一页之后 "+step);
         change();
@@ -31,7 +31,7 @@
         }
         
     },
-    onSlideNextEnd: function (){//往下翻一张结束  上来就会+1 因为展示的是真实的第一张 在他前面有一张
+    onSlideNextStart: function (){//往下翻一张结束  上来就会+1 因为展示的是真实的第一张 在他前面有一张
         step++;
         console.log("往后翻一页之后 "+step);
         change();

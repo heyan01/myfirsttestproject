@@ -354,8 +354,14 @@ html, body {
     padding-top: .8rem;
     height: 100%;
     box-sizing: border-box;
-
-
+}
+@-webkit-keyframes move {
+    0%{
+        transform: rotateY(0deg) ;
+    }
+    100%{
+        transform: rotateY(360deg) ;
+    }
 }
 @keyframes move {
     0%{
@@ -372,12 +378,6 @@ html, body {
 
 
 /*swiper end*/
-
-
-
-
-
-
 
 
 @-webkit-keyframes bounceInUp {
@@ -525,7 +525,6 @@ html, body {
     }
 }
 
-
 @-webkit-keyframes fadeInDown {
     from {
         opacity: 0;
@@ -581,10 +580,6 @@ html, body {
         transform: none;
     }
 }
-
-
-
-
 
 @-webkit-keyframes bounceInLeft {
     from, 60%, 75%, 90%, to {

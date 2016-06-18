@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>验证码</title>
+    <style>
+        body,div{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin: 50px auto;
+            border: 2px dashed red;
+            border-radius: 3px;
+            background: #ccc;
+            -webkit-user-select: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap" class="wrap">
+        A4X5
+    </div>
+</body>
+</html>
+<script>
+    var oDiv = document.getElementById('wrap');
+    var strRange = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    //strRange[strRange.length-1];
+    //charAt()
+
+    oDiv.onclick = function (){
+       getCode();
+    }
+    function getCode(){
+        var str = '';
+        for(var i=0; i<4; i++){
+            var ran = Math.round(Math.random()*(61-0)+0);
+            var ranChar = strRange.charAt(ran);
+            str += ranChar;
+        }
+        oDiv.innerHTML = str;
+    }
+    getCode();
+
+    //  大小写不能重复，出现过的不能出现
+</script>

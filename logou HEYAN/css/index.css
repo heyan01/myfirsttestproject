@@ -1,0 +1,177 @@
+html,body,div,h1,h2,h3,h4,h5,h5,h6,a,ul,li,p,span,img,b,i{padding: 0;margin: 0;list-style: none;text-decoration: none;font-family: "Microsoft Yahei";font-size: 14px;line-height: 22px;color: #333}
+.inner1024{width: 1024px;margin: 0 auto;position: relative}
+.clear{clear:both;height: 0;line-height: 0}
+
+
+.top30{width: 100%;height: 30px;background: #333333;border-bottom: 1px solid #d2d2d2}
+.top30 a{font-size: 14px;color: #c4c3c3;display:inline-block;height: 15px;line-height: 15px;text-align: center}
+.top30 a:hover{color: #ffffff}
+.top30Left{float: left;height: 15px;margin-top: 3px;margin-left: 30px;}
+.top30 a{width: 70px;padding-left: 12px}
+.top30 .fir{background: url("../images/app_icon_4940eb3.png") no-repeat ;border-right: 1px solid #5d5d5d;width: 76px;padding-left: 10px;color: #08d7a2}
+.top30 .fir:hover{color:#05eaaf }
+.top30Right{float: right;height: 15px;margin-top:3px;margin-right: 30px}
+.top30Right a{width:28px;padding-right: 12px }
+.top30Right .las{border-left: 1px solid  #5d5d5d;width: 28px;padding-left: 12px}
+/*/////////////*/
+.head55{height: 55px;width: 100%;background: #fafafa;border-bottom: 1px solid #e5e5e5}
+.head55 h1{float: left; height: 35px;line-height:35px;width: 97px;background: url("../images/logo_1c5763c.png") no-repeat center;margin-top: 10px;overflow: hidden}
+.head55 .logo{float: left;width: 117px;padding-left: 12px;padding-top: 22px}
+.head55 span{font-size: 18px;color: #333333}
+.head55 a{font-size: 12px;color: #999999}
+
+
+.head55 .link a{float: left; width: 46px;height: 55px;text-align: center;line-height: 55px;margin-right: 36px;font-size: 18px}
+
+.head55 .curent,.head55 .link a:hover{border-bottom: 2px solid #00b38a;color: #333333;font-size: 18px;}
+.head55 .curent{margin-left: 48px}
+/* */
+.content{padding-top: 35px;}
+.content .left{margin-right: 46px;width: 230px;position: relative;float: left}
+.content .left ul{position: relative;/* height: 748px;*/background: #fafafa;}
+/*.content .left ul li{list-style: none;/!*position: relative;*!//!*padding-bottom: 35px;*!/padding: 6px 12px;border: 2px solid #fafafa;border-right: 0px;}*/
+.content .left ul li{position: relative}
+.content .left ul .short{position: relative;/*padding-bottom: 35px;*/padding: 6px 12px;border: 2px solid #fafafa;border-right: 0px;z-index: 102}
+.content .left ul li h2{font-size: 18px;color: #333;padding-left: 8px;margin: 10px 0; font-weight: 100;}
+.content .left ul li .design{position: absolute;width: 92px; top: 18px;left:98px;background: #00b38a;border-radius: 9px;color: #fff;line-height: 17px;font-size: 12px;font-style: normal;text-align: center;cursor: pointer}
+.content .left ul li .newLabel{position: absolute;top: 12px;left: 58px; width: 46px;height: 22px;background: url("../images/newLabel_a3b2897.png") no-repeat center}
+.content .left ul li span{position: absolute;left: 198px;top: 15px; height: 24px;width: 10px; background: url("../images/arr_6c6ecd7.png") no-repeat center;background-position: 0 5px}
+.content .left ul li a{ display: inline-block;/*height: 28px;line-height: 28px; */margin:  0 5px 5px 0;padding: 0 8px; font-size: 14px;color:  #555555;}
+.content .left ul li a:hover{color: #00b38a;text-decoration: underline}
+.content .left .detail{display: none; width: 540px;padding: 15px 30px 5px;position: absolute;left: 230px;background: #fff;border: 2px solid #c9cbce;/*top: 0px;*/z-index: 100}
+.content .left .detail dl{margin: 0 0 20px;}
+.content .left .detail dl dt{width: 70px;font-size: 14px;margin: 0;text-align: right;position: absolute}
+.content .left .detail dl dt a{padding: 0;color: #333;line-height: 28px;text-decoration: underline;}
+.content .left .detail dd{margin-left: 100px;overflow: hidden;}
+.content .left .detail dd a{padding: 0 10px;background: url("../images/arr_6c6ecd7.png") -29px  center no-repeat ;line-height: 28px;margin-left: -1px;color: #777;font-size: 14px}
+.content .left .detail dd a:hover{color: #00b38a;text-decoration: underline}
+.content .left .detail dd a.currDd{color: #00b38a;}
+
+
+.content .left ul .bingo{background: white;border: 2px solid #c9cbce ;border-right:0;z-index: 101;width: 206px;}
+
+/*������µĶ���ְλ*/
+.content .left .book{display: block; height: 46px;border-bottom: 2px solid #00b38a;font-size: 18px;color: #555555;line-height: 46px;padding-left: 40px;background: #fafafa;margin-top: 12px}
+.content .left .book i{display: inline-block;height: 22px;width: 22px;background: url("../images/arr_btn_34cdbac.png") no-repeat center;background-position: 0px -18px;margin-top: 14px;margin-left:76px;}
+.content .left .book:hover{color: #00b38a}
+
+
+.content .right{width: 744px;float: right;}
+
+/*������*/
+.content .right .seach{width: 740px;height: 37px;}
+.content .right .seachInput{width: 570px;height: 23px;border: 2px solid #00b38a;padding: 5px 8px 5px 10px;font-size: 16px;color: #999999;border-right: 0;float: left}
+.content .right .seachSubmit{height: 37px;width: 150px;color: #ffffff;font-size: 18px;background: #00b38a;border: 2px solid #00b38a;cursor: pointer;font-weight: 400}
+
+/*�����������������ְλ*/
+.content .right .hotSeach{margin: 6px 0  18px 0;height: 22px}
+.content .right .hotSeach li{float: left;font-size: 14px;}
+.content .right .hotSeach li a{color: #00b38a;font-size: 14px;margin-right: 20px;}
+.content .right .hotSeach li a:hover{text-decoration: underline}
+
+.content .right .banner{width: 744px;height: 160px;margin: 0 0 18px;overflow: hidden}
+.content .right .banner .bannerBig{width: 612px;position: relative;float: left; }
+.content .right .banner .bannerBig li{width: 612px;height: 160px;/*position: absolute;top: 0px;left: 0*/}
+
+/*banner�ұߵ�Сͼ*/
+.content .right .banner .bannerSmall{width: 127px;height: 160px;float: right;position: relative}
+.content .right .banner .bannerSmall li{width: 113px;height: 42px;border: 4px solid #d3d3d3;margin-bottom: 5px;position: relative;}
+.content .right .banner .bannerSmall li.currentImg i{background: none}
+.content .right .banner .bannerSmall li i{position: absolute;width: 113px;height: 42px;background: url("../images/thumb_cover_d65c767.png")no-repeat center}
+.content .right .banner .bannerSmall em{position: absolute; left:-6px; width: 127px;height: 50px;background: url("../images/control_current_3d8ebbe.png")no-repeat center; z-index: 2 }
+
+.content .bannerBtm{list-style: none;height: 118px;margin: 0 0 25px;overflow: hidden}
+.content .bannerBtm .mark{display: none;/*z-index: 3 ;*/ position: absolute;top: 0;left: 0; background-color: rgba(0,179,138,.9);width: 113px;height: 113px;}
+.content .bannerBtm .mark h2{font-size: 24px;height: 24px;margin: 10px 8px 8px;font-weight: 400;text-align: center;overflow: hidden;color: #fff;}
+.content .bannerBtm .mark em{display: block;width: 100px;height: 5px;background: rgba(255,255,255,.3);margin: 0 6px}
+.content .bannerBtm .mark p{font-size: 12px;margin: 6px 8px;line-height: 18px;color: #fff}
+.content .bannerBtm li{list-style: none;float: left;margin-right: 8px;border: 2px solid #fafafa;height: 113px;width: 113px;position: relative;overflow: hidden;cursor: pointer}
+.content .bannerBtm li.lastImg{margin-right: 0;}
+.content .bannerBtm li img{width: 113px;height: 113px}
+
+/*ѡ�������*/
+.content .right .jobTab{width: 734px;/*height: 39px;*/background: #f6f6f6}
+.content .right .jobTab li{display: inline-block; font-size: 18px;padding: 7px 20px;color: #999;cursor: pointer}
+.content .right .jobTab li.current{background: #fff;color: #333;border-top: 3px solid #00b38a}
+
+/*���� ���岿��*/
+.content .right .tabDetail ul li{width: 744px;height: 123px;border-bottom: 1px dashed #e1e1e1}
+.content .right .tabDetail  ul li .jobTop{height: 62px;background: #fff;padding-top: 22px;padding-left: 15px}
+.content .right .tabDetail  ul li .jobTop .jobDesLeft{width: 400px;margin-right: 20px;float: left}
+.content .right .tabDetail  ul li .jobTop .jobDesLeft .jobName{height: 34px;}
+.content .right .tabDetail  ul li .jobTop .jobDesLeft .jobName h2{float: left}
+.content .right .tabDetail  ul li .jobTop .jobDesLeft .jobName h2 a{color: #00b38a;font-size: 16px;font-weight:400 }
+.content .right .tabDetail ul li .jobTop .jobDesLeft .jobName h2 span{font-size: 16px;color: #00b38a;margin-left: 6px}
+.content .right .tabDetail ul li .jobTop .jobDesLeft .jobName .time{float: left;color: #999;margin-left: 10px;}
+
+.content .right .tabDetail ul li .jobTop .jobDesLeft .salary .salary{float: left;height:28px;margin-right: 20px;font-size: 16px;color: #fa6041 }
+
+
+.content .right .tabDetail ul li .jobTop .jobDesRight{width: 309px;float: right}
+.content .right .tabDetail  ul li .jobTop .jobDesRight h5 a{display:block;height: 34px;color: #00b38a;font-size: 16px;font-weight: 400}
+
+.content .right .tabDetail  ul li .jobBot{height: 39px;background: #fafafa;}
+.content .right .tabDetail  ul li .jobBot .jobCon{float: left;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;width: 400px;height: 39px;line-height: 39px;padding-left: 15px;padding-right: 20px}
+.content .right .tabDetail  ul li .jobBot .tips{float: left;width: 309px;margin-top: 8px}
+.content .right .tabDetail  ul li .jobBot .tips span{display: inline-block;;border: 1px solid #dcdcdc;padding: 0 3px;margin-right: 10px}
+
+.newPosTab{display: none}
+.tabDetail .more{float: right;background: #00b38a url("../images/arrow_54116b2.png") no-repeat center;color: #fff;font-size: 16px;margin: 10px 0 0;padding: 5px 40px 5px 15px;margin-top: 25px;background-position: 88px }
+
+.content .right .linkBox{padding: 15px 0 0;margin-top: 40px;border-top: 1px solid #ececed;height: 240px}
+.content .right .linkBox dl{margin: 0}
+
+.content .right .linkBox dt{float: left;width: 70px;margin-top: 2px;font-size: 15px}
+.content .right .linkBox dd{margin: 0;margin-left: 70px;}
+.content .right .linkBox dd a{float: left;white-space: nowrap;height: 15px;padding: 8px 9px;font-size: 12px;line-height: 15px;color: #555;}
+.content .right .linkBox dd a.textDe{text-decoration: underline}
+.content .right .linkBox dd a:hover{text-decoration: underline;color: #0061a6}
+.content .right .linkBox dd span{float: left;padding: 7px 0 9px;font-size: 12px;line-height: 15px;color: #999;}
+
+/*�ص�����*/
+.toTop{display: none;width: 28px;height: 64px;position: fixed;left:50%;margin-left: 548px; bottom: 208px;cursor: pointer;background: url("../images/backtop_6e69c27.png") no-repeat }
+.toTop:hover{background-position: -28px}
+
+.feedBack{position: fixed;left:50%;margin-left: 538px; height: 50px;width: 50px;cursor: pointer;bottom: 148px}
+.feedBack .icon{display:block; height: 30px;width: 30px;margin: 0 auto; background: url("../images/feedback_776e64f.png") no-repeat}
+.feedBack .icon:hover{background-position: 0 -31px}
+.feedBack a{font-size: 12px;color: #555;}
+
+
+.footer{background: #fff;clear: both;height: 67px;border-top: 1px solid #ebebeb;position: relative;}
+.footer .footLogo{position: absolute;top: 9px;left: 0;width: 198px;height: 19px;display: block;background: url("../images/footer_lagou_icon_66d2b4b.png") 0 0 no-repeat}
+.footer .footNav{float: right;padding-top: 12px;height: 14px;line-height: 14px;white-space: nowrap;}
+.footer .footNav a{margin-right: 15px;float: left;color: #555;font-size: 14px;line-height: 20px;height: 20px}
+.footer .footNav span{line-height: 14px}
+
+.footer .footNav .APP{position: relative;padding-right: 33px}
+.footer .footNav .APP span{position: absolute;right: 0;top: -2px;background: url("../images/new_v1_a261f5c.png") no-repeat;width: 30px;height: 16px;margin-left: 3px;}
+.footer .footNav .APP img,.footer .footNav .weibo img{display: none; width: 256px;height: 256px;position: absolute;bottom: 20px;left: 0;border: 3px solid #0D9572;z-index: 1001}
+.footer .footNav .weibo{position: relative}
+.copyRight{clear: both; height: 12px;margin: 0 auto;padding-top: 13px;padding-bottom: 14px;;line-height: 12px;text-align: center;}
+.copyRight i,.copyRight span,.copyRight a{font-size: 12px;color: #d5d5d5;line-height: 12px}
+
+.logoinBar{width: 100%;height: 64px;position: fixed;left: 0;bottom: 0px;background: url("../images/footerbar_repeat_e3527a7.png") repeat-x}
+.logoinBar em{width: 95px;height: 54px; position: absolute;top: -54px;left: -110px;background: url("../images/footbar_img_4a640f1.png")}
+.logoinBar img{position: absolute;top: 10px;left: -110px;width: 138px;height: 45px}
+
+.logoinBar .company{display: inline-block;height: 30px;padding-right: 33px;margin: 20px 0 0 294px;background: url("../images/footbar_text.png")  right 16px no-repeat }
+.logoinBar i{display: inline-block;width: 20px;height: 30px;background: url("../images/footbar_number.png") no-repeat 0 0}
+.logoinBar b{background: url("../images/footbar_comma.png") center bottom no-repeat;width: 9px;height: 30px;display: inline-block;}
+
+.logoinBar .positionCount{display: inline-block;height: 30px;background: url("../images/footbar_text.png") right bottom no-repeat;padding-right: 33px;margin: 20px 0 0 60px}
+.logoinBar .one{background-position: 0 -30px}
+.logoinBar .two{background-position: 0 -60px}
+.logoinBar .five{background-position: 0 -150px}
+.logoinBar .seven{background-position: 0 -210px}
+.logoinBar .nine{background-position: 0 -270px}
+
+.logoinBar .login{display: inline-block;position: absolute;left: 790px;height: 64px; padding:0 46px;background: url("../images/footbar_btn_green_e62c2f7.png") repeat-x}
+.logoinBar .login:hover{background: #5eb39d}
+.logoinBar .login i{width: 50px;height: 64px;display: block;background: url("../images/footbar_login_400aa57.png") no-repeat center}
+
+.logoinBar  .registBox{height: 64px;position: absolute;left: 932px;top: 0;background: url("../images/footbar_btn_red_d327566.png") repeat-x;width: 100%}
+.logoinBar .regist{display: inline-block;padding:0 46px;height: 64px;/*background: url("../images/footbar_btn_red_d327566.png") repeat-x*/}
+.logoinBar .regist:hover{background: #e76363}
+
+.logoinBar .regist i{width: 120px;height: 64px;display: block;background: url("../images/footbar_register_787a590.png") no-repeat center}

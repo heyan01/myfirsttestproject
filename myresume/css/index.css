@@ -119,6 +119,11 @@ html, body {
 .pageOne img:nth-child(3){
      z-index:1;
      transform:scale(0.5) rotate(-30deg);
+    -ms-transform: scale(0.5) rotate(-30deg);
+    -webkit-transform: scale(0.5) rotate(-30deg);
+    -o-transform: scale(0.5) rotate(-30deg);
+    -moz-transform:scale(0.5) rotate(-30deg);
+
      bottom: -2rem;
      right: -0.5rem;
  }
@@ -193,7 +198,14 @@ html, body {
     }
 }
 /*tittle start*/
-.tittle{position: absolute;z-index: 6;color: #fff;transform: rotate(90deg);top: 50%;margin-top:-0.25rem ;left: -0.2rem; font-size: .35rem;}
+.tittle{position: absolute;z-index: 6;color: #fff;
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -moz-transform:rotate(90deg);
+    transform: rotate(90deg);
+
+    top: 50%;margin-top:-0.25rem ;left: -0.2rem; font-size: .35rem;}
 /*tittle end*/
 
 
@@ -301,12 +313,16 @@ html, body {
 #pageThr .botRight li:nth-child(2){
     -webkit-animation: fadeInRight 3s 1.4s both;
     animation: fadeInRight 3s 1.4s both;
+
+
 }
 
 .pageThr .botRight li:nth-child(3){height: 36%;}
 #pageThr .botRight li:nth-child(3){
     -webkit-animation: fadeInRight 2.7s 1.7s both;
-    animation: fadeInRight 2s 1.7s both;
+    animation: fadeInRight 2.7s 1.7s both;
+    -o-animation:fadeInRight 2.7s 1.7s both;
+    -moz-animation:fadeInRight 2.7s 1.7s both;
 }
 /*bot end*/
 /*pageThr end*/
@@ -334,10 +350,12 @@ html, body {
     transform-style: preserve-3d;/*3d效果必须写*/
 }
 #pageFour .container{
+    -webkit-animation: move 10s linear 2;
+    -o-animation: move 10s linear 2;
+    -moz-animation:move 10s linear 2;
     animation: move 10s linear 2 ;
-    -webkit-animation: move 10s linear 2;/*不加非苹果手机出问题*/
-
 }
+
 .slide{
     position: absolute;
     width: 100%;

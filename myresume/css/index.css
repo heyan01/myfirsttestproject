@@ -172,6 +172,26 @@ html, body {
         right: 100%;
          }
 }
+
+@-webkit-keyframes star {
+    0%{
+        opacity: 0;
+        bottom: -2rem;
+        right: -1rem;
+    }50%{
+         opacity: 1;
+         right: 60%;
+         bottom: 50%;
+     }75%{
+          right: 100%;
+          bottom: 100%;
+      }
+    100%{
+        opacity: 1;
+        bottom: -110%;
+        right: 100%;
+    }
+}
 /*tittle start*/
 .tittle{position: absolute;z-index: 6;color: #fff;transform: rotate(90deg);top: 50%;margin-top:-0.25rem ;left: -0.2rem; font-size: .35rem;}
 /*tittle end*/
@@ -315,6 +335,7 @@ html, body {
 }
 #pageFour .container{
     animation: move 10s linear 2 ;
+    -webkit-animation: move 10s linear 2;/*不加非苹果手机出问题*/
 
 }
 .slide{

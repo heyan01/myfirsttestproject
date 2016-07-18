@@ -24,18 +24,18 @@
     },   */
     onSlidePrevStart: function () {//往上翻一张结束
         step--;
-        console.log("往上翻一页之后 "+step);
+       // console.log("往上翻一页之后 "+step);
         change();
         if(step===0){
-            step=4;
+            step=5;
         }
         
     },
     onSlideNextStart: function (){//往下翻一张结束  上来就会+1 因为展示的是真实的第一张 在他前面有一张
         step++;
-        console.log("往后翻一页之后 "+step);
+        //console.log("往后翻一页之后 "+step);
         change();
-        if(step===5){
+        if(step===6){
             step=1;
         }
     }
@@ -50,28 +50,17 @@
             curDiv.index=i;
             //console.log(curDiv.index);
             if(step===curDiv.index){
-                console.log(step);
-                console.log(curDiv.index);
-                console.log(curDiv.getAttribute("trueId"));
-
+                //console.log(step);
+                //console.log(curDiv.index);
+                //console.log(curDiv.getAttribute("trueId"));
                 curDiv.id=curDiv.getAttribute("trueId");
                 console.log(curDiv.id);
             }else{
                 curDiv.id="";
             }
-            
         }
-        
     }
-    
-
 }();
-
-
-
-
-
-
 /*音频自动播放*/
 ~function () {
     var audioBox=document.querySelector(".audio");
@@ -84,7 +73,6 @@
         },false)
 
     },1000);
-
     audioBox.addEventListener("click", function () {
         //console.log(11);
         if(myAudio.paused){//当前是暂停状态
@@ -94,10 +82,7 @@
         }
         myAudio.pause();
         audioBox.className="audio";
-
     },false)
-
-
 }();
 
 

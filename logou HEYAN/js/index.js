@@ -1,27 +1,112 @@
+/*DOM utils start*/
+var DOM=(function () {
+    var flag='getComputedStyle' in window;
+    function listToArray(likeArray){
+        var arr = [];
+        try{
+            arr= Array.prototype.slice.call(likeArray);
+        }catch (e){
+            for(var i =0; i<likeArray.length;i++){
+                arr.push(likeArray[i]);
+            }
+        }
+        return arr;
+    }
+    return {
+        listToArray:listToArray,
+        par:function par(ele){
+            var arr=[];
+            arr.push(ele);
+            var p=ele.parentNode;
+            while(p){
+                arr.push(p);
+                p= p.parentNode;
+            }
+            return arr
+        },
+        children:function children(ele){
+            var arr=[];
+            for(var i=0;i<ele.childNodes.length;i++){
+                var curchildNod=ele.childNodes[i]
+                if(curchildNod.nodeType==1){
+                    arr.push(curchildNod)
+                }
+            }
+            return arr;
+        },
+        getLastElement:function getLastElement(ele){
+            if(flag){
+                return ele.lastElementChild;
+            }else{
+                var arr=children(ele);
+                return arr[arr.length-1]
+            }
+        },
+        getStyle:function getStyle(ele,attr){
+            if(flag){
+                return window.getComputedStyle(ele,null)[attr]
+            }else{
+                return ele.currentStyle(attr);
+            }
+        },
+        getElementsByClass:function getElementsByClassName(className,context){
+            var context = context||document;
+            if(flag){
+                return this.listToArray(context.getElementsByClassName(className));
+            }
+            var allTag = context.getElementsByTagName("*");
+            var classList = className.replace(/^ +| +$/g,"").split(/\s+/);
+            var arr = [];
+            for(var i=0;i<allTag.length;i++){
+                var cur = allTag[i];
+                var f = true;
+                for(var j = 0; j<classList.length;j++){
+                    var curClassName = classList[j];
+                    var reg = new RegExp("(?:^| +)"+curClassName+"(?: +|$)");
+                    if(!reg.test(cur.className)){
+                        flag = false;
+                        break;
+                    }
+                }
+                if(f){
+                    arr.push(cur);
+                }
+            }
+            return arr;
+
+        }
+    }
+})();
+/*DOM utils end*/
 var leftOuter=document.getElementById("leftOuter");
 var left=document.getElementById("left");
-var leftLis=leftOuter.getElementsByClassName("leftLis");
-var leftLiDivs=left.getElementsByClassName("short");
-
+//var leftLis=leftOuter.getElementsByClassName("leftLis");
+var leftLis=DOM.getElementsByClass("leftLis",leftOuter);
+//var leftLiDivs=left.getElementsByClassName("short");
+var leftLiDivs=DOM.getElementsByClass("short");
 var detailOne=document.getElementById("detailOne");
-var details=left.getElementsByClassName("detail");
-
+//var details=left.getElementsByClassName("detail");
+//var leftLiDivs=DOM.getElementsByClass("detail",left);
 var detailTwo=document.getElementById("detailTwo");
 
-///左侧鼠标事件 遍历所有的li 经过某一个Li的时候 让里面的div 显示出来
+/*left show detail start*/
     ~function () {
         for(var i=0;i<leftLis.length;i++){
             var curLi=leftLis[i];
             curLi["index"]=i;
-            curLi.onmouseenter= function (e) {//如果鼠标滑过当前这个元素的话 让这个元素的最后一个孩子显示出来
+            curLi.onmouseenter= function (e) {
+                var curDetail=DOM.getLastElement(this);
                 if(this.index==0){
-
-                    this.lastElementChild.style.display="block";
-                    this.lastElementChild.style.top=0;
+                    curDetail.style.display="block";
+                    curDetail.style.top=0;
+                    console.log(curDetail.style.top);
                 }else{
-                    this.lastElementChild.style.display="block";
-                    this.lastElementChild.style.top=-(this.lastElementChild.offsetHeight-this.offsetHeight)/2+"px";
+                    curDetail.style.display="block";
+                    //console.log(curDetail.offsetHeight, this.offsetHeight );
+                    curDetail.style.top=-(parseFloat(curDetail.offsetHeight)-parseFloat(this.offsetHeight))/2+"px";
+                    
                 }
+                console.log(leftLiDivs[this.index]);
                 leftLiDivs[this.index].className="bingo short";
             };
             curLi.onmouseleave= function (e) {
@@ -30,42 +115,20 @@ var detailTwo=document.getElementById("detailTwo");
                     leftLiDivs[this.index].className="short"
                 }
                 //console.log( this.lastElementChild);
-                this.lastElementChild.style.display="none "//在IE中出现问题，显示的内容不能隐藏掉
+                DOM.getLastElement(this).style.display="none";//在IE中出现问题，显示的内容不能隐藏掉 兼容问题
             }
         }
     }();
-     
-
-  function par(ele){
-      var arr=[];
-      arr.push(ele);
-      var p=ele.parentNode;
-      while(p){
-          arr.push(p);
-          p= p.parentNode;
-      }
-      return arr
-  }
-
-   function children(ele){//获取所有的孩子
-       var arr=[];
-       for(var i=0;i<ele.childNodes.length;i++){
-           var curchildNod=ele.childNodes[i]
-           if(curchildNod.nodeType==1){
-               arr.push(curchildNod)
-           }
-       }
-       return arr;
-   }
+/*left show detail end*/
 
 
-//////页面中心两个选项卡实现
+/*two tab start*/
 var oJobtab=document.getElementById("jobTab");
 var jobTabLi=oJobtab.getElementsByTagName("li");
 var tabDetail=document.getElementById("tabDetail");
 var tabDiv=tabDetail.getElementsByClassName("posTab");
 ~function () {
-    for(var i=0;i<jobTabLi.length;i++){//给每一个li绑定一个点击事件
+    for(var i=0;i<jobTabLi.length;i++){
         var curLi=jobTabLi[i];
         curLi.index=i;
         curLi.onclick= function () {
@@ -78,12 +141,11 @@ var tabDiv=tabDetail.getElementsByClassName("posTab");
             }
             tabDiv[this.index].style.display="block"
         }
-
     }
 }();
+/*two tab end*/
 
-/*ajax 动态绑定 start*/
-
+/*ajax  start*/
 var hotPosUl=document.getElementById("hotPosUl");
 var newPosUl=document.getElementById("newPosUl");
 ~function () {
@@ -129,35 +191,6 @@ var newPosUl=document.getElementById("newPosUl");
         var str="";
         for(var i=0;i<data.length;i++){
             var dataDetail=data[i];
-        /*<li class="jobDes">
-                <div class="jobTop">
-                <div class="jobDesLeft">
-                <div class="jobName">
-                <h2><a href="###">前端 <span>[北京]</span></a></h2>
-            <span class="time">2016-5-20</span>
-                </div>
-                <div class="salary">
-                <span class="salary">20K-40K</span>
-            <span>经验3-5年/本科</span>
-            </div>
-            </div>
-            <div class="jobDesRight">
-                <h5><a href="###">盈泰财富云</a></h5>
-            <div class="companyDes">
-                移动互联网 · 金融 / 成长型(A轮)
-            </div>
-            </div>
-            </div>
-            <div class="jobBot">
-                <div class="jobCon">“股权激励 六险一金 优于同业的薪酬”</div>
-            <div class="tips">
-            <span>技能培训</span>
-            <span>岗位提升</span>
-            <span>年终分红</span>
-
-            </div>
-            </div>
-            </li>*/
             str+='<li class="jobDes">';
             str+='<div class="jobTop">';
             str+='<div class="jobDesLeft">';
@@ -188,7 +221,6 @@ var newPosUl=document.getElementById("newPosUl");
         }
         newPosUl.innerHTML=str;
     }
-
     var xhr=new XMLHttpRequest();
     xhr.open("get","./json/hotPosition.json",false);
     xhr.onreadystatechange= function () {
@@ -197,7 +229,6 @@ var newPosUl=document.getElementById("newPosUl");
       }
     };
     xhr.send(null);
-
     var xhr1=new XMLHttpRequest();
     xhr1.open("get","./json/newPosition.json",false);
     xhr1.onreadystatechange= function () {
@@ -206,42 +237,23 @@ var newPosUl=document.getElementById("newPosUl");
         }
     };
     xhr1.send(null);
-
-
-
-
 }();
+/*ajax  end*/
 
 
-
-/*ajax 动态绑定 end*/
 var logoinBar=document.getElementById("logoinBar");
 var footer=document.getElementById("footer")
-/*console.log(document.body.scrollHeight);
-console.log(document.body.scrollTop);
-console.log(footer.offsetHeight);*/
-//////////////回到顶部 底部横条
 var goTopIcon=document.getElementById("goTopIcon");
 
-/*function offsetT(ele){
-    var t=ele.offsetTop;
-    var p=ele.parentNode;
-    while(p){
-        t+= p.offsetTop;
-        p= p.parentNode;
-    }
-    return t
-}
-console.log(footer.offsetTop);*/
-
+/*footerBar toTop Start*/
 ~function () {
     window.onscroll= function () {
         var bodyScrTop=document.documentElement.scrollTop||document.body.scrollTop;
         var bodyCliHeight=document.documentElement.clientHeight||document.body.clientHeight;
-        if(footer.offsetTop-bodyCliHeight-bodyScrTop<=0){//当下面的盒子出现时，下面的盒子出现了多少像素 他的底部定位就是多少像素；
+        if(footer.offsetTop-bodyCliHeight-bodyScrTop<=0){
             logoinBar.style.bottom=bodyCliHeight+bodyScrTop-footer.offsetTop+"px";
                // 68+"px";
-        }else{//当下面的盒子消失
+        }else{
             logoinBar.style.bottom=0
         }
         if(bodyScrTop<=0){
@@ -254,8 +266,6 @@ console.log(footer.offsetTop);*/
         var interval=10;
         var time=600;
         var step=distance/time*interval;
-
-        console.log(step);
         function top(){
             if(distance<=0){
                 goTopIcon.style.display="none";
@@ -269,25 +279,19 @@ console.log(footer.offsetTop);*/
         var goToptimer=window.setInterval(top,interval);
     };
 }();
-
-////////轮播图效果；
+/*footerBar toTop end*/
 
 var bannerBig=document.getElementById("bannerBig");
 var bannerBigLis=bannerBig.getElementsByTagName("li");
 var bannerSmall=document.getElementById("bannerSmall");
 var oEm=bannerSmall.getElementsByTagName("em")[0];
-var bannerSmallLis=bannerSmall.getElementsByTagName("li");//获取右边盒子的三个li
+var bannerSmallLis=bannerSmall.getElementsByTagName("li");
 var bannerI=bannerSmall.getElementsByTagName("i");
-console.log(bannerI);
-/*for(var i=0;i<bannerBigLis.length;i++){
-    var curbannerBigLi=bannerBigLis[i];
-    step刚开始的时候是0 第一张图片，然后是1 第二张图片 然后是2 显示第三张图片
-    遍历右面盒子里的li,当上面的滑块走到自己身上时，就把
 
-}*/
+/*slideImage start*/
  var step=0;
 function aotumove(){
-    window.clearInterval(bannerBig.timer); /*每次进行轮播的时候把自身的定时器清掉 防止本次没走完 就开始下一次动画 */
+    window.clearInterval(bannerBig.timer);
     window.clearInterval(oEm.timer);
     step++;
     if(step==3){
@@ -307,9 +311,8 @@ function Uncover(){
         step==j?bannerSmallLis[j].className="currentImg":"";
     }
 }
-var aotumovetimer=window.setInterval(aotumove,2000);/*动画里有一个定时器，全局下一个定时器 让右侧轮播 左侧em也动*/
-
-bannerBig.onmouseover= function () {//左侧盒子
+var aotumovetimer=window.setInterval(aotumove,2000);
+bannerBig.onmouseover= function () {
     clearInterval(aotumovetimer);
 };
 bannerBig.onmouseout= function () {
@@ -318,13 +321,8 @@ bannerBig.onmouseout= function () {
     },2000);
 };
 
-///右侧的小盒子
-
-bannerSmall.onmouseover= function (e) {/*当鼠标经过小的轮播区域时 首先大大轮播图不轮播 如果正在运动过程中 直接走完该次动画 然后清三个定时器*//*先是over 才是enter*/
-
+bannerSmall.onmouseover= function (e) {
     window.clearInterval(aotumovetimer);
-    /*window.clearInterval(bannerBig.timer);
-    window.clearInterval(oEm.timer);*/
 
     e=e||window.event;
     e.target= e.target|| e.srcElement;
@@ -339,24 +337,22 @@ bannerSmall.onmouseover= function (e) {/*当鼠标经过小的轮播区域时 �
             Uncover();
         }
     }
-
-
 };
-bannerSmall.onmouseout= function () {//鼠标离开
+bannerSmall.onmouseout= function () {
     aotumovetimer=window.setInterval(aotumove,2000);
 };
+/*slideImage end*/
 
-//////////footer里的名片和微博
+/* footer start*/
 var oApp=document.getElementById("APP");
 var oWeibo=document.getElementById("weibo");
-
 oApp.onmouseenter= function () {
     var appImg=this.lastElementChild;
     animate(appImg,{opacity:1},600);
     appImg.style.display="block"
 };
 oApp.onmouseleave= function () {
-    this.lastElementChild.style.opacity=0;///为什么并不能把透明度改成0；可以让一个隐藏的盒子的透明度变成0么？
+    this.lastElementChild.style.opacity=0;
     this.lastElementChild.style.display="none";
 };
 oWeibo.onmouseover= function () {
@@ -369,7 +365,9 @@ oWeibo.onmouseout= function () {
     this.lastElementChild.style.opacity=0;
     this.lastElementChild.style.display="none";
 };
-/////动画库 只能是页面中的某一个元素可以用动画库的代码，如果是回到顶部，此类改变的值是body的某属性，不能用这个动画；
+/* footer end*/
+
+/*animate start*/
 var heyanEffect={
     linear: function (t,b,c,d) {
         return b+t/d*c;
@@ -409,9 +407,9 @@ function animate(ele,target,duration){
     }
    var timer=window.setInterval(move,interval)
 }
+/*animate end*/
 
-
-/////遮罩层的效果 老师写的
+/*cover start*/
 ~function ($) {
     //direction:计算进入或者离开的方向
     function direction(pageX, pageY) {
@@ -459,6 +457,7 @@ function animate(ele,target,duration){
 
     $.fn.extend({mouseAnimate: mouseAnimate});
 }(jQuery);
+/*cover end*/
 
 $(".bannerBtm li").mouseAnimate(300);
 

@@ -102,7 +102,7 @@ html, body {
 
 
 .pageOne img{position: absolute;opacity: 0/*display: none*/}
-.pageOne img:nth-child(1), .pageTwo img:nth-child(1){
+.pageOne img:nth-child(1), .pageTwo img:nth-child(1),.pageFour img:nth-child(1){
     position: absolute;
     z-index: 5;
     height: 100%;
@@ -302,7 +302,7 @@ html, body {
 }
 
 .pageThr .botRight{width: 37%;left: 58%}
-.pageThr .botRight li{opacity: 0;font-size: .18rem;font-weight: 500;padding: .05rem 5px}
+.pageThr .botRight li{opacity: 0;font-size: .18rem;font-weight: 500;padding: .06rem 5px}
 .pageThr .botRight li:nth-child(1){height: 30%;}
 #pageThr .botRight li:nth-child(1){
     -webkit-animation: fadeInRight 4s 1s both;
@@ -326,9 +326,33 @@ html, body {
 }
 /*bot end*/
 /*pageThr end*/
-
-/* pageFour start*/
+/*pagefour start*/
 .pageFour{background: url("../img/pageone_3.jpg") no-repeat; background-position: center;
+    background-size: cover; height: 100%;position: relative;width: 100%;color: #fff;}
+/*.pageFour .tittle{left: -0.50rem}*/
+.pageFour span{ opacity: 0;position: absolute;display: block;width: 56%;color: #fff;font-size: .14rem;background-color: rgba(0,0,0,.4);line-height:.20rem ;border-radius: .1rem;margin-top: .1rem;padding:0.05rem .05rem 0.05rem 0.08rem;}
+.pageFour img:nth-child(1){opacity: 0}
+#pageFour img:nth-child(1){
+    -webkit-animation: fadeInLeft 2s 0s both;
+    animation: fadeInLeft 2s 0s both;
+}
+#pageFour span:nth-child(even){
+    -webkit-animation: bounceInRight 4s 0.5s both;
+    animation: bounceInRight 4s 0.5s both;
+}
+#pageFour span:nth-child(odd){
+    -webkit-animation: bounceInLeft 4s 0.5s both;
+    animation: bounceInLeft 4s 0.5s both;
+}
+
+.pageFour .name{top: 6%;left: 1rem}
+.pageFour .add{top: 40%;left: 1rem}
+.pageFour .mas{top: 61%;left: 1rem}
+
+
+/*pagefive end*/
+/* pageFive start*/
+.pageFive{background: url("../img/pageone_3.jpg") no-repeat; background-position: center;
     background-size: cover; height: 100%;position: relative;width: 100%;color: #fff;}
 
 .stage {
@@ -349,7 +373,7 @@ html, body {
     height:41.6% ;
     transform-style: preserve-3d;/*3d效果必须写*/
 }
-#pageFour .container{
+#pageFive .container{
     -webkit-animation: move 10s linear 2;
     -o-animation: move 10s linear 2;
     -moz-animation:move 10s linear 2;
@@ -413,7 +437,7 @@ html, body {
 
 
 
-/* pageFour end*/
+/* pageFive end*/
 
 
 /*swiper end*/
